@@ -31,18 +31,15 @@
             var H = window.innerHeight;
             canvas.width = W;
             canvas.height = H;
-
             var y = 0;
             // var str = "abcdefghijklmnopqrstuvwsyz";
             // var str = "anopqruvwsy";
             var str = "anop qruv wsy";
-
             var colunms = Math.floor(W / 16); // 一共需要多少行
             var dropArr = []; // 每一行的初始y位置都是0
-		for(let i = 0; i < colunms; i++){
-			dropArr.push(0);
-		}
-
+            for(let i = 0; i < colunms; i++){
+                dropArr.push(0);
+            }
             function draw(){
                 // 3、重绘画布
                 context.fillStyle = "rgba(0,0,0,.08)";
@@ -70,7 +67,7 @@
                 // y++;
                 
                 // 4、多行字符下落
-                context.font = "700 "+"16"+"px 微软雅黑";
+                // context.font = "700 "+"16"+"px 微软雅黑";
                 // context.fillStyle = randColor();
                 // var word = str[Math.floor(Math.random() * str.length)];
                 // var colunms = Math.floor(W / 16); // 一共需要多少行
@@ -95,15 +92,11 @@
                     context.fillStyle = randColor();
                     var tx = i*16;
                     context.fillText(word,tx,ty);
-                    if(ty >= H && Math.random() < 0.02){
+                    if(ty >= H && Math.random() < 0.01){
                         dropArr[i] = 0;
                     }
                     dropArr[i]++;
                 }
-                // if(ty >= H){
-                //     y=0;
-                // }
-                // y++;
                 // 4.3 完成版
                 // context.font = "700 16px 微软雅黑";
                 // for(let i = 0; i<colunms; i++){
@@ -119,22 +112,18 @@
                 //     dropArr[i]++;
                 // }
                
-
             }
             // draw();
-
             setInterval(draw,30);
-
             function randColor(){
                 var r = Math.floor(Math.random() * 256);
                 var g = Math.floor(Math.random() * 256);
                 var b = Math.floor(Math.random() * 256);
-		return "rgb("+r+","+g+","+b+",1)";
+		        return "rgb("+r+","+g+","+b+",1)";
                 // var o = 0.05;
                 // return "rgb("+r+","+g+","+b+","+o+")";
             } 
         }
-
     </script>
 </body>
 </html>
